@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Responsive Navbar</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo"> <span>FIT</span>CLUB</a>
+    
+        <div class="burger"> <!-- Moved .burger inside nav -->
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    
+        <ul class="nav-links">
+            <li><a id="item_nav" href="index.html">Home</a></li>
+            <li><a id="item_nav" href="trainers.html">Trainers</a></li>
+            <li><a id="item_nav" href="about.html">About</a></li>
+            <li><a id="item_nav" href="features.html">Features</a></li>
+            <li><a id="item_nav" href="signup.html">Log in</a></li>
+        </ul>
+    </nav>
+
+
+
+
+    <div class="home_text">
+        <!-- Content of your homepage goes here -->
+        <h1 id = "f1"><span id="f2">WELCOME</span> TO FIT CLUB</h1>
+        <p id = "f3">" Having a perfect body requires a lot of traiing.Nice-looking body and powerful organism are interconnected-and we can help you with both. "</p>
+        <a href="signUp.html" class="join-button">Join now</a>
+
+    </div>
+
+
+
+    <!-- ==================Card Hover================== -->
+    <div class="headings">
+        <h1 id = "f1"><span id="f2">Meet</span> our Idols</h1>
+    </div>
+    <div class="card_container">
+        <div class="card">
+            <div class="wrapper">
+                <img class="cover-image" src="img/p41.png">
+            </div>
+            <img class="title" src="img/p43.png">
+            <img class="character" src="img/p42.png">
+        </div>
+        <div class="card">
+            <div class="wrapper">
+                <img class="cover-image" src="img/p11.png">
+            </div>
+            <img class="title" src="img/p13.png">
+            <img class="character" src="img/p12.png">
+        </div>
+        <div class="card">
+            <div class="wrapper">
+                <img class="cover-image" src="img/p21.png">
+            </div>
+            <img class="title" src="img/p23.png">
+            <img class="character" src="img/p22.png">
+        </div>
+        <div class="card">
+            <div class="wrapper">
+                <img class="cover-image" src="img/p31.png">
+            </div>
+            <img class="title" src="img/p33.png">
+            <img class="character" src="img/p32.png">
+        </div>
+
+    </div>
+
+
+    <!-- =============== slider ======================= -->
+    <div class="headings">
+        <h1 id = "f1"><span id="f2">Glimpses</span></h1>
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img id="img1" src="img/1076.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img id="img1" src="img/2149175410.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img id="img1" src="img/2149627073.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+
+    <!-- ================== Blogs =================== -->
+    <div class="headings">
+        <h1 id = "f1"><span id="f2">Blogs</span></h1>
+    </div>
+    <div class="pagec">
+        <div class="pagediv">
+            <h3>Fitness</h3>
+
+            <p>"Embrace the burn, it's your path to strength.
+                Every rep, every drop of sweat, fuels your journey.
+                In the gym, you sculpt more than muscles; you sculpt character.
+                Push beyond limits, for greatness lies in the grind..."
+            </p>
+        </div>
+        <div class="pagediv">
+            <h3>Diet</h3>
+
+            <p>"
+                "Your journey to fitness isn't just measured in reps and sets, but also in the choices you make outside
+                the gym. Your diet isn't just about what you eat; it's a reflection of your commitment, discipline, and
+                dedication to your goals..."</p>
+        </div>
+        <div class="pagediv">
+            <h3>Training</h3>
+            <p>"In the echoing halls of the gym, where iron clangs and sweat falls like rain, lies the sacred ground
+                where champions are forged. Each rep, each drop of sweat, each moment of struggle is a testament to the
+                strength of your spirit and the power of your will..."</p>
+            <!-- "Give me a minute, I'm good. Give me an hour, I'am great. Give me six months, I'm unbeatable"<br> -->
+        </div>
+    </div>
+
+    <!-- ================================================= -->
+
+    <script src="script.js"></script>
+
+
+    <footer class="footer">
+        <div class="footer-column">
+          <!-- Add this HTML code where you want to use the styled text -->
+      <p class="alphagym"><span class="alpha">ALPHA</span><span class="gym">GYM</span></p>
+      
+          <ul>
+            <ul>13 th street Avenue,Sector-3,Kolkata</ul>
+            <ul>Near Park Street Police Station</ul>
+            <ul>Adjacent to Park Street Metro Station</ul>
+            <ul>Kolkata 700071,</ul>
+            <ul>WestBengal,India</ul>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul><p class="alphagym"><span class="alpha">SITE</span><span class="gym">MAP</span></p>
+            <ul>Home</ul>
+            <ul>Trainers</ul>
+            <ul>About</ul>
+            <ul>Features</ul>
+            <ul>Login</ul>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul> <ul><p class="alphagym"><span class="alpha">REASON FOR</span><span class="gym">JOINING US</span></p>
+            <ul>&bull; Going to gym is great for body</ul>
+            <ul>&bull; Fitness is not about building a great body but a better life</ul>
+            <ul>&bull; Pushing Through the pain and embracing the gain</ul>
+          </ul>
+        </div>
+      </footer>
+</body>
+
+</html>

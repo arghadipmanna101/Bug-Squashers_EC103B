@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background:#101116;
+    overflow-x:hidden;
+
+}
+
+nav {
+    /* background-color: #191c29; */
+    color: rgb(6, 6, 6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-weight: 1000;
+    
+    background: linear-gradient(-90deg, black, transparent);
+} 
+
+.logo {
+    font-weight: bolder;
+    color: #fff;
+    font-size: 2.5rem;
+  }
+  
+.logo span {
+    color: #f00;
+}
+
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgb(209, 209, 209);
+    transition: ease-in-out 0.4s;
+}
+
+.nav-links a:hover{
+    color:  #a90a0a;
+}
+
+
+/* ================================================ */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line1,
+.line2,
+.line3 {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+           display: none;
+           flex-direction: column;
+           align-items: center;
+           width: 100%;
+           position: absolute;
+           top: 60px;
+           left: 0;
+           background-color: #333;
+           transition: all 0.5s ease;
+    }
+
+    .nav-links li {
+           margin-top: 20px;
+    }
+
+    .burger {
+           display: flex;
+        }
+}
+
+/* ================================ */
+html::-webkit-scrollbar-thumb {
+    background: #a90a0a;
+}
+
+html::-webkit-scrollbar-track {
+    background: #000;
+}
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* ==================================== */
+
+.footer {
+    background-color: #0aa987;
+    color: #a90a0a;
+    padding: 3rem 0;
+    /* border: 2px solid #0aa92c; */
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    width: 30%;
+    margin-bottom: 2rem;
+}
+
+.footer-column h3 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #a90a0a;
+    color: white;
+    background-color: rgb(19, 12, 12);
+}
+
+.footer-bottom p {
+    font-size: 0.7rem;
+}

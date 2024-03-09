@@ -1,0 +1,100 @@
+.container {
+    width: 100%;
+}
+
+.container > div {
+    width: 45%; /* Each div takes half of the container width */
+    height: 225px; /* Set an appropriate height */
+    text-align: center;
+    line-height: 100px; /* Vertically center the content */
+    border: 2px solid #c92020; /* Add borders for visibility */
+}
+
+.div1, .div3{
+    width:100px;
+    margin-top: 20px;
+    margin-left:5%;
+    float:left;
+    margin-bottom: 30px;
+    background-color: #d34040; /* Light gray background for divs 1 and 4 */
+    border-radius: 10px; /* Adjust the border radius as needed */
+    background-image: conic-gradient(from 90deg, rgb(231, 231, 234), rgb(212, 210, 225), rgb(255, 254, 255));
+    box-shadow: 5px 5px 5px rgb(209, 80, 63);
+}
+
+.div2, .div4 {
+    margin-right: 5%;
+    margin-bottom: 30px;
+    float:right;
+    background-color: #c42e2e; /* Slightly darker gray background for divs 2 and 3 */
+    border-radius: 10px; /* Adjust the border radius as needed */
+    background-image: conic-gradient(from 90deg, rgb(231, 231, 234), rgb(212, 210, 225), rgb(255, 254, 255));
+    box-shadow: 5px 5px 5px rgb(209, 80, 63);
+    
+}
+.div2:hover{
+    transform: translate(-10px, -10px); /* Add hover effect */
+      box-shadow: 5px 5px 10px rgba(222, 218, 218, 0.3);
+
+}.div4:hover{
+    transform: translate(-10px, -10px); /* Add hover effect */
+      box-shadow: 5px 5px 10px rgba(216, 211, 211, 0.3);
+}
+
+.div1:hover{
+    transform: translate(-10px, -10px); /* Add hover effect */
+      box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.3);
+
+}.div3:hover{
+    transform: translate(-10px, -10px); /* Add hover effect */
+      box-shadow: 5px 5px 10px rgba(246, 242, 242, 0.3);
+}
+@media screen and (max-width: 600px) {
+    .container > div {
+        width: 100%; /* Stack divs vertically on smaller screens */
+        margin-left: 0;
+        margin: 10px 0;
+        position: static;
+    }
+}
+.container2 {
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+  }
+
+  /* Style for the image */
+  .rounded-image {
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px; /* Adjust the size of the container as needed */
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    position:relative;
+  }
+
+  /* Style for the text */
+  .text {
+    flex-grow: 1;
+    margin-left: 10px; /* Adjust the margin between image and text as needed */
+    display: inline-block; /* Ensures vertical-align property works */
+    vertical-align: top;    /* Aligns the text to the top */
+    line-height: 1.5;       /* Adjust the line height as needed */
+ /* Replace with your desired font-family */
+    font-size: 20px;        /* Adjust the font size as needed */
+    font-weight: 100; 
+    text-align: left;
+  }
+  
+  .star-icon {
+    color: gold; /* You can change the color to your preference */
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
+/* ============================================= */

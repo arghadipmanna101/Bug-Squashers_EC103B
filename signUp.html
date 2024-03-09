@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="#" class="logo"> <span>FIT</span>CLUB</a>
+
+    </div>
+    <ul class="nav-links">
+      <li><a id="item_nav" href="index.html">Home</a></li>
+      <li><a id="item_nav" href="trainers.html">Trainers</a></li>
+      <li><a id="item_nav" href="about.html">About</a></li>
+      <li><a id="item_nav" href="features.html">Features</a></li>
+      <li><a id="item_nav" href="login.html">Log in</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
+  <!-- <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div> -->
+  <section id="contact">
+    <div class="boxes">
+      <div class="box">
+        <div class="h-primary center">
+          <button id="btn1">Sign Up</button><button id="btn">Log in</button>
+          <div id="contact-box">
+            <form action="">
+              <div class="form-group">
+
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+
+                <input type="email" name="name" id="email" placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <input type="phone" name="name" id="phone" placeholder="Enter your Contact No">
+              </div>
+              <div class="form-group">
+
+                <input type="password" name="password" id="password" placeholder="Enter password">
+                <!-- <textarea name="massage" id="massage" cols="30" rows="10"></textarea> -->
+              </div>
+              <div>
+                <button id="logout">Log out</button>
+              </div>
+              <!-- Google Sign-In button -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <footer>
+    <div class="center">
+      Copyright &copy; www.myOnlineMeal.com.All rights reserved!
+    </div>
+  </footer> -->
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCCno05AlWHDHHD1nhOY0P1oCoytlOj8Sw",
+    authDomain: "login-f1ffb.firebaseapp.com",
+    projectId: "login-f1ffb",
+    storageBucket: "login-f1ffb.appspot.com",
+    messagingSenderId: "877288872785",
+    appId: "1:877288872785:web:706625310c3560ce175170",
+    measurementId: "G-9P6EMQH5KP"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth();
+  console.log(app);
+  document.getElementById("btn1").addEventListener("click", function () {
+    console.log("Ready to sigh in ");
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    //For new registration
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user);
+        alert("Registration successfully!!");
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        console.log(errorMessage);
+        alert(error);
+      });
+  });
+
+  document.getElementById("btn").addEventListener("click", function () {
+    console.log("Ready to log in ");
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user);
+        alert(user.email + " Login successfully!!!");
+        document.getElementById('logout').style.display = 'block';
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        alert(errorMessage);
+      });
+  });
+
+  document.getElementById("logout").addEventListener("click", function () {
+    console.log("logout starts");
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      console.log('Sign-out successful.');
+      alert('Sign-out successful.');
+      document.getElementById('logout').style.display = 'none';
+    }).catch((error) => {
+      // An error happened.
+      console.log('An error happened.');
+    });
+  });
+
+
+
+
+</script>
+
+</html>

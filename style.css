@@ -1,0 +1,553 @@
+body {
+       margin: 0;
+       font-family: Arial, sans-serif;
+       width: 100vw;
+       height: 100vh;
+       background-color: #101116;
+       overflow-x: hidden;
+
+}
+
+background-image,
+html {
+       margin: 0;
+       padding: 0;
+       height: 100%;
+}
+
+.home_text {
+       position: relative;
+       width: 100%;
+       height: 100%;
+       background-image: url('img/new_home.jpg');
+       background-size: cover;
+       background-position: center;
+       color: #fff;
+       /* Text color on top of the background */
+       text-align: center;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       /* border: 2px solid red; */
+       align-items: center;
+}
+
+h1 {
+       font-size: 2.5rem;
+       margin-bottom: 20px;
+}
+
+p {
+       font-size: 1.2rem;
+       margin-bottom: 40px;
+}
+
+/* For responsiveness */
+@media (max-width: 768px) {
+       h1 {
+              font-size: 2rem;
+       }
+
+       p {
+              font-size: 1rem;
+       }
+}
+
+
+html::-webkit-scrollbar-thumb {
+       background: #a90a0a;
+}
+
+html::-webkit-scrollbar-track {
+       background: #000;
+}
+
+html::-webkit-scrollbar {
+       width: 0.5rem;
+}
+
+
+nav {
+       /* background-color: #191c29; */
+       color: rgb(6, 6, 6);
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 20px;
+       font-weight: 1000;
+
+       background: linear-gradient(-90deg, black, transparent);
+}
+
+.logo {
+       font-weight: bolder;
+       color: #fff;
+       font-size: 3rem;
+}
+
+.logo span {
+       color: #f00;
+}
+
+
+.nav-links {
+       list-style-type: none;
+       display: flex;
+
+}
+
+.nav-links li {
+       margin-right: 20px;
+}
+
+.nav-links li a {
+       text-decoration: none;
+       color: rgb(209, 209, 209);
+       transition: ease-in-out 0.4s;
+}
+
+.nav-links a:hover {
+       color: #a90a0a;
+}
+
+
+/* ================================================ */
+.burger {
+       display: none;
+       flex-direction: column;
+       cursor: pointer;
+}
+
+.line1,
+.line2,
+.line3 {
+       width: 25px;
+       height: 3px;
+       background-color: white;
+       margin: 3px;
+}
+
+@media screen and (max-width: 768px) {
+       .nav-links {
+              display: none;
+              flex-direction: column;
+              align-items: center;
+              width: 100%;
+              position: absolute;
+              top: 60px;
+              left: 0;
+              background-color: #333;
+              transition: all 0.5s ease;
+       }
+
+       .nav-links li {
+              margin-top: 20px;
+       }
+
+       .burger {
+              display: flex;
+       }
+}
+
+/* ========================================= */
+
+
+.card {
+       width: var(--card-width);
+       height: var(--card-height);
+       position: relative;
+       display: flex;
+       justify-content: center;
+       align-items: flex-end;
+       padding: 0 36px;
+       perspective: 2500px;
+       margin: 0 50px;
+       cursor: pointer;
+       border-radius: 1.5%;
+
+}
+
+.card_container {
+       width: 100vw;
+       height: 30vw;
+       margin: 0;
+       display: flex;
+       /* flex-wrap: wrap; */
+       justify-content: center;
+       align-items: end;
+       background: #101116;
+       padding-bottom: 5vw;
+       border-radius: 1.5%;
+}
+
+.cover-image {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       border-radius: 1.5%;
+
+}
+
+.wrapper {
+       transition: all 0.5s;
+       position: absolute;
+       width: 100%;
+       z-index: -1;
+       border-radius: 1.5%;
+}
+
+.wrapper::before,
+.wrapper::after {
+       content: '';
+       opacity: 0;
+       width: 100%;
+       height: 80px;
+       transition: all 0.5s;
+       position: absolute;
+       left: 0;
+}
+
+.wrapper::before {
+       top: 0;
+       height: 100%;
+       background-image: linear-gradient(to top, transparent 46%, rgb(12, 13, 19, 0.5) 68%, rgb(12, 13, 19) 97%);
+}
+
+.wrapper::after {
+       bottom: 0;
+       opacity: 1;
+       background-image: linear-gradient(to bottom, transparent 46%, rgb(12, 13, 19, 0.5)68%, rgb(12, 13, 19) 97%);
+}
+
+.title {
+       width: 100%;
+       transition: transform 0.5s;
+}
+
+.character {
+       width: 100%;
+       opacity: 0;
+       position: absolute;
+       z-index: -1;
+       transition: all 0.5s;
+}
+
+.card:hover .wrapper {
+       transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+       box-shadow: 0px 35px 32px -8px rgb(0, 0, 0, 0.75);
+}
+
+.card:hover .title {
+       transform: translate3d(0%, -50%, 100px);
+}
+
+.card:hover .wrapper::after .wrapper::before {
+       opacity: 1;
+}
+
+.card:hover .wrapper::after {
+       height: 120px;
+}
+
+.card:hover .wrapper::before {
+       opacity: 1;
+}
+
+.card:hover .character {
+       opacity: 1;
+       transform: translate3d(0%, -30%, -100px);
+}
+
+
+/* =================================================== */
+
+.footer {
+       background-color: #0aa987;
+       color: #a90a0a;
+       padding: 3rem 0;
+       /* border: 2px solid #0aa92c; */
+}
+
+.footer .container {
+       display: flex;
+       justify-content: space-between;
+       align-items: flex-start;
+}
+
+.footer-columns {
+       display: flex;
+       flex-wrap: wrap;
+}
+
+.footer-column {
+       width: 30%;
+       margin-bottom: 2rem;
+}
+
+.footer-column h3 {
+       font-size: 0.9rem;
+       margin-bottom: 1rem;
+}
+
+.footer-column ul {
+       list-style: none;
+       padding: 0;
+}
+
+.footer-column ul li {
+       margin-bottom: 1rem;
+}
+
+.footer-bottom {
+       text-align: center;
+       margin-top: 2rem;
+       padding-top: 1rem;
+       border-top: 1px solid #a90a0a;
+       color: white;
+       background-color: rgb(19, 12, 12);
+}
+
+.footer-bottom p {
+       font-size: 0.7rem;
+}
+
+
+/* =================================== */
+
+.mySlides {
+       display: none;
+}
+
+#img1 {
+       vertical-align: middle;
+       border-radius: 2%;
+       transition: ease-in-out 0.4s;
+}
+
+#img1:hover {
+       box-shadow: 0 0px 20px rgb(76, 53, 53);
+       scale: 1.05;
+}
+
+.slideshow-container {
+       position: relative;
+       width: 45vw;
+       margin: 2vw auto;
+       /* border-radius: 2%; */
+       /* border: 5px solid rgb(0, 122, 222); */
+}
+
+.prev,
+.next {
+       cursor: pointer;
+       position: absolute;
+       top: 50%;
+       width: auto;
+       padding: 16px;
+       margin-top: -22px;
+       color: white;
+       font-weight: bold;
+       font-size: 18px;
+       transition: 0.6s ease;
+
+}
+
+.next {
+       right: 0;
+       border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+       background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fade {
+       animation-name: fade;
+       animation-duration: 1.5s;
+}
+
+@keyframes fade {
+       from {
+              opacity: .4
+       }
+
+       to {
+              opacity: 1
+       }
+}
+
+/* ================================= */
+.pagec {
+       width: 80vw;
+       /* height: 100vh; */
+       display: flex;
+       margin: auto;
+       flex-wrap: wrap;
+       /* border: 2px solid rgb(130, 130, 239); */
+
+
+
+}
+
+.pagediv {
+       margin-left: 2%;
+       padding: 2%;
+       border-radius: 20px;
+       box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.397);
+       color: rgb(255, 255, 255);
+       width: 25%;
+       min-width: 70px;
+       background-color: rgba(0, 0, 0, 0.829);
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       transition: ease-in-out 0.3s;
+       /* border: 2px solid blue; */
+}
+
+.pagediv:hover {
+
+       background-color: #a90a0a;
+       color: rgb(255, 255, 255);
+       box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.521);
+
+}
+
+
+/* ============================================== */
+
+.join-button {
+       display: inline-block;
+       padding: 10px 20px;
+       background-color: red;
+       /* Red color */
+       color: white;
+       /* Text color */
+       border: none;
+       border-radius: 5px;
+       font-family: Arial, sans-serif;
+       /* Arial font */
+       font-size: 16px;
+       cursor: pointer;
+       text-decoration: none;
+       transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.join-button:hover {
+       background-color: darkred;
+       /* Darker red on hover */
+}
+
+/* =============== Slider Responsiveness ===================== */
+
+@media screen and (max-width: 425px) {
+       .card_container{
+              flex-wrap: wrap;
+              border: 2px solid red;
+              height: 250vw;
+
+       }
+       .card{
+              margin: 15vh;
+              scale:0.6;
+              align-items: center;
+       }
+
+       .slideshow-container {
+              width: 90vw;
+              height: auto;
+       }
+
+       .pagediv{
+              /* background-color: violet; */
+              width: 80vw;
+               margin: 4vw;
+       }
+}
+
+/* ===================================== */
+#f1{
+       font-weight: 1000;
+       /* border: 2px solid white; */
+}
+
+#f2{
+
+       color:#f00;
+}
+
+#f3{
+       width: 50%;
+       /* border: 2px solid white; */
+}
+
+.headings{
+       width:30%;
+       text-align: center;
+       color:white;
+       margin:auto;
+       /* border: 2px solid white; */
+
+}
+
+.footer {
+       display: flex;
+       justify-content:center;
+       color: #fff;
+       padding: 20px;
+       position: relative;
+       bottom: 0;
+       width: 100%;
+     }
+     
+     .footer-column {
+       flex: 3;
+       text-align:center;
+       line-height: 1.5;
+     }
+     
+     .footer-column ul {
+       list-style: none;
+       padding: 0;
+       text-align: center;
+     }
+     
+     .footer-column li {
+       margin: 5px 0;
+       list-style: none;
+       
+     }
+     
+     /* Optional: Style the bullets */
+     .footer-column li:before {
+       content: "\2022"; /* Unicode character for a bullet point */
+       color: #fff;
+       display: inline-block;
+       width: 1em;
+       margin-left: -1em;
+     }
+     /* Add this CSS code to your existing styles.css or gyminstructor.css */
+   
+   .alphagym {
+       font-weight: bold;
+     text-transform: uppercase;
+     letter-spacing: -1px; /* Reduce letter spacing */
+     font-size: 23px; /* Adjust the font size */
+     line-height: 1.1; /* Adjust the line height */
+     padding-top: 10px; /* Adjust the top padding */
+     padding-bottom: 3px; /* Adjust the bottom padding */;
+     font-family:Verdana, Geneva, Tahoma, sans-serif;
+     }
+     
+     .alphagym .alpha {
+       color: #f00; /* Orange color for ALPHA */
+       text-shadow: 2px 2px 8px rgba(29, 29, 29, 0.7); 
+       font-weight: bolder;
+       font-size: 23px;
+     }
+     
+     .alphagym .gym {
+       color:#fff;/* White color for GYM */
+       font-size: 23px;
+       text-shadow: 2px 2px 8px rgba(255, 204, 0, 0.7); 
+     }

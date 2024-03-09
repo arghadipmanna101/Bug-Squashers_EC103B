@@ -1,0 +1,201 @@
+body {
+  background: url("gynGirl.jpg");
+}
+
+nav {
+  /* background-color: #191c29; */
+  color: rgb(6, 6, 6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1vw;
+  font-weight: 1000;
+
+  background: linear-gradient(-90deg, black, transparent);
+}
+html::-webkit-scrollbar-thumb {
+  background: #a90a0a;
+}
+
+html::-webkit-scrollbar-track {
+  background: #000;
+}
+
+html::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.logo {
+  font-weight: bolder;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.logo span {
+  color: #f00;
+}
+
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+
+}
+
+.nav-links li {
+  margin-right: 2.50vw;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(209, 209, 209);
+  transition: ease-in-out 0.4s;
+}
+
+.nav-links a:hover {
+  color: #a90a0a;
+}
+
+/* ================================================ */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.line1,
+.line2,
+.line3 {
+  width: 4vw;
+  height: 1.5vw;
+  background-color: white;
+  margin: 1.5vw;
+}
+
+@media screen and (max-width: 99vw) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      position: absolute;
+      top: 60vw;
+      left: 0;
+      background-color: #333;
+      transition: all 0.5s ease;
+  }
+
+  .nav-links li {
+      margin-top: 20vw;
+  }
+
+  .burger {
+      display: flex;
+  }
+}
+
+.login_page {
+  background-color: black;
+}
+
+.boxes {
+  background-color: rgb(0, 0, 0);
+
+}
+
+.box {
+  background-color: rgba(0, 0, 0, 0.556);
+  width: 20vw;
+  padding: 2vw 3vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.1vw solid #a90a0a;
+  text-align: center;
+  border-radius: 1em;
+  transition: all 0.3s ease;
+  /* Add transition for smooth effects */
+}
+
+.box:hover {
+  box-shadow: 0 0 1.5vw rgba(255, 82, 82, 0.5);
+  /* Add shadow on hover */
+}
+
+.box h1 {
+  font-size: 1.7em;
+  color: #a90a0a;
+}
+
+.box input[type="text"],
+.box input[type="email"],
+.box input[type="password"] {
+  padding: 0.7em;
+  display: block;
+  margin: 0.5vw auto;
+  text-align: left;
+  font-size: 1em;
+  font-weight: 3vw;
+  background: none;
+  outline: none;
+  color: #fff;
+  transition: border-color 0.3s ease;
+  /* Transition for border color change */
+  border: none;
+  border-bottom: 0.2vw solid #a90a0a;
+}
+
+.box input[type="text"]:focus,
+.box input[type="email"]:focus,
+.box input[type="password"]:focus {
+  border-bottom: 0.2vw solid#a90a0a;
+  /* Change border color on focus */
+}
+
+.box input[type="text"]:hover,
+.box input[type="email"]:hover,
+.box input[type="password"]:hover {
+  border-bottom: 0.2vw solid #ffffff;
+  /* Change border color on hover */
+}
+.box input[type="submit"] {
+  font-weight: bold;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  display: block;
+  margin: 2vw auto 0.5vw;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #a90a0a;
+  border: #a90a0a;
+  border-radius:  solid;
+  transition: all 0.4s ease;
+  /* Add transition for smooth effects */
+  cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+  background-color: #ff5252;
+  /* Change background color on hover */
+  border-color: #ff5252;
+  /* Change border color on hover */
+  transform: scale(1.05);
+  /* Scale up on hover */
+}
+
+a {
+  text-decoration: none;
+  color: #a90a0a;
+}
+
+a:hover {
+  color: #ff5252;
+  /* Change text color on hover */
+}
+
+/* ======================= */
+p {
+  color: white;
+}
